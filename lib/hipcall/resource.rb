@@ -11,25 +11,25 @@ module HipcallSdk
 		def get_request(url, params: {}, headers: {})
 			handle_response client.connection.get(url, params, headers)
 		end
-	
+
 		def post_request(url, body:, headers: {})
 			handle_response client.connection.post(url, body, headers)
 		end
-	
+
 		def patch_request(url, body:, headers: {})
 			handle_response client.connection.patch(url, body, headers)
 		end
-	
+
 		def put_request(url, body:, headers: {})
 			handle_response client.connection.put(url, body, headers)
 		end
-	
+
 		def delete_request(url, params: {}, headers: {})
 			handle_response client.connection.delete(url, params, headers)
 		end
 
 		def handle_response(response)
-			message = response.body["errors"]
+			message = response.body["error"] || response.body["errors"]
 			case response.status
 			when 400
 				raise Error, message
@@ -39,7 +39,7 @@ module HipcallSdk
 				raise Error, message
 			when 404
 				raise Error, message
-			when 419 
+			when 419
 				raise Error, message
 			when 422
 				raise Error, message
