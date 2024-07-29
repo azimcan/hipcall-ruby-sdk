@@ -1,17 +1,22 @@
-module HipcallSdk
-	class CompanyResource < Resource
+module Hipcall
+  class Company < Resource
+    def self.list(**params)
+      response = request(method: :get, path: "companies", params:)
+      Collection.from_response(response, key: "data")
+    end
+
     def create_tags(company_id:, **attributes)
       response = post_request("companies/#{company_id}/tags", body: attributes)
-			Collection.from_response(response, key: "data", type: Tag)
+      Collection.from_response(response, key: "data", type: Tag)
     end
-    
+
     def delete_tags(company_id:, tag_id:)
       delete_request("companies/#{company_id}/tags/#{tag_id}")
     end
 
     def create_comment(company_id:, **attributes)
       response = post_request("companies/#{company_id}/comments", body: attributes)
-      Comment.new response.body.dig("data")
+      Comment.new response.body["data"]
     end
-	end
+  end
 end

@@ -7,9 +7,9 @@
 
 ## v2.3.0
 
-- Add tags to Contact 
+- Add tags to Contact
 - Remove tags from Contact.
-- Add tags to Company 
+- Add tags to Company
 - Remove tags from Company.
 
 ## v2.2.0
@@ -30,7 +30,7 @@
 
 ### Refactor
 
-- Hipcall module name changed to HipcallSdk.
+- Hipcall module name changed to Hipcall.
 
 ## v1.0.0
 

@@ -1,8 +1,8 @@
 # Hipcall
 
-Welcome to your new gem! In this directory, you'll find the files 
-you need to be able to package up your Ruby library into a gem. 
-Put your Ruby code in the file `lib/hipcall`. To experiment with 
+Welcome to your new gem! In this directory, you'll find the files
+you need to be able to package up your Ruby library into a gem.
+Put your Ruby code in the file `lib/hipcall`. To experiment with
 that code, run `bin/console` for an interactive prompt.
 
 ## Installation
@@ -24,11 +24,11 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-require "hipcall_sdk"
+require "hipcall"
 
-hipcall = HipcallSdk::Client.new(
-    api_key: "YOUR TOKEN IS HERE", 
-    version: "v3", 
+hipcall = Hipcall::Client.new(
+    api_key: "YOUR TOKEN IS HERE",
+    version: "v3",
     base_url: "https://use.hipcall.com/api/"
 )
 ```
@@ -172,11 +172,11 @@ gem push pkg/hipcall-x.x.x.gem
 For local development
 
 ```ruby
-require "hipcall_sdk"
+require "hipcall"
 
-hipcall = HipcallSdk::Client.new(
-    api_key: "g2gDbQAAACQwMDZiYzA4Ni00OGI4LTRjMGItYjQxNy01MzAzNWFjZDVjOGFuBgBfEMd9jQFiAeNPSA.v4O0DvJ9IbzH_GOk6Uo4XpXPNpuM9GF4WvxqKmHB7Is", 
-    version: "v3", 
+hipcall = Hipcall::Client.new(
+    api_key: "g2gDbQAAACQwMDZiYzA4Ni00OGI4LTRjMGItYjQxNy01MzAzNWFjZDVjOGFuBgBfEMd9jQFiAeNPSA.v4O0DvJ9IbzH_GOk6Uo4XpXPNpuM9GF4WvxqKmHB7Is",
+    version: "v3",
     base_url: "http://localhost:4000/api/"
 )
 ```

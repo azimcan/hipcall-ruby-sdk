@@ -1,4 +1,4 @@
-module HipcallSdk
-	class Error < StandardError
-	end
+module Hipcall
+  class Error < StandardError
+  end
 end

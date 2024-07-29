@@ -4,13 +4,13 @@ require_relative "lib/hipcall/version"
 
 Gem::Specification.new do |spec|
   spec.name = "hipcall"
-  spec.version = HipcallSdk::VERSION
+  spec.version = Hipcall::VERSION
   spec.authors = ["Hipcall Development Team", "Onur Ozgur OZKAN", "Kendal BOZKURT"]
   spec.email = ["hello@hipcall.com"]
 
   spec.summary = "Hipcall's Ruby SDK"
   spec.homepage = "https://www.hipcall.com"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 3.3.4"
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 

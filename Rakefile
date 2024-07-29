@@ -9,6 +9,7 @@ end
 
 task default: :test
 
-task :console do
+desc "Do something"
+task console: :environment do
   exec "irb -I lib -r hipcall.rb"
 end
