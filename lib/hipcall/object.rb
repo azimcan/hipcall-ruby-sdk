@@ -8,7 +8,7 @@ module Hipcall
 
     def to_ostruct(obj)
       if obj.is_a?(Hash)
-        OpenStruct.new(obj.transform_values { |key, val| [key, to_ostruct(val)] })
+        OpenStruct.new(obj.transform_values { |value| to_ostruct(value) })
       elsif obj.is_a?(Array)
         obj.map { |o| to_ostruct(o) }
       else # Assumed to be a primitive value

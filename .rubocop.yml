@@ -4,10 +4,6 @@ require:
   - rubocop-minitest
   - rubocop-rake
 
-
-AllCops:
-  TargetRubyVersion: 3.3.4
-
 Style/Documentation:
   Enabled: false
 Style/FrozenStringLiteralComment:

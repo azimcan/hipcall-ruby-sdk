@@ -2,10 +2,11 @@ module Hipcall
   class Collection
     attr_reader :data, :meta
 
-    def self.from_response(response, key:)
+    def self.from_response(response, type:)
+      type = "Hipcall::Objects::#{type}".constantize
       body = response.body
       new(
-        data: body[key].map { |attrs| attrs },
+        data: body["data"].map { |attrs| type.new(attrs) },
         meta: body["meta"]
       )
     end
